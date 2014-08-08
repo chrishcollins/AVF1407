@@ -1,0 +1,7 @@
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/android/support/v7/appcompat/R.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/com/weather/my/ApplicationStylesheet.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/com/weather/my/R.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/com/weather/my/WeatherActivity.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/com/weather/my/WeatherAppInfo.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/com/weather/my/WeatherApplication.java"
+"/Users/chriscollins/Desktop/MDVBS/AVFW-1407/AVF1407-Project1/build/android/gen/ti/modules/titanium/ui/R.java"
