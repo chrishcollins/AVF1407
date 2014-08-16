@@ -1,0 +1,23 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "universal",
+	"iosSdkPath": "/Users/chriscollins/Library/Application Support/Titanium/mobilesdk/osx/3.3.0.GA/iphone",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "7fb655db1d51a26b74a2778ab4a02a6b",
+	"modulesNativeHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "787cd39",
+	"name": "I'm Local",
+	"id": "com.fullsail.demoApp",
+	"analytics": true,
+	"publisher": "chriscollins",
+	"url": "http://",
+	"version": "1.0",
+	"description": "undefined",
+	"copyright": "2014 by chriscollins",
+	"guid": "c9d3ef82-3b3d-43bf-b396-f9b21c22964a",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false,
+	"encryptJS": false
+}
