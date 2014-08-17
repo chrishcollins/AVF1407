@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<title>'Awesome Map'</title>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+<style type="text/css">
+	html { height: 100% }
+	body { height: 100%; margin: 0; padding: 0; }
+	#map-canvas { height: 100%; }
+	#info { font-weight: bold; font-size:18px; margin : 0 5px; }
+</style>
+
+<script type="text/javascript">
+	var map, info, config, markers, markerIndex = 0, scriptLoaded = false;
+
+	window.onerror = function(errMsg, url, lineNumber){
+		Ti.API.error("Line " + lineNumber + ": " + errMsg + " (" + url + ")");
+	};
+
+	function initialize() {
+		var mapOptions = {
+				center : new google.maps.LatLng(config.lat, config.lon),
+				zoom : config.zoom,
+				disableDefaultUI : true,
+				mapTypeId : google.maps.MapTypeId[config.mapType]
+			},
+		    thePanorama;
+
+		map = new google.maps.Map(
+			document.getElementById("map-canvas"),
+			mapOptions
+		);
+
+		info = new google.maps.InfoWindow();
+
+		thePanorama = map.getStreetView();
+
+		for(var x=0, len=markers.length;x<len;x++){
+			setTimeout(function(){
+					addMaker();
+				},
+				x * 200
+			);
+		}
+
+		google.maps.event.addListener(thePanorama, 'visible_changed', function() {
+			if (thePanorama.getVisible()) {
+				Ti.App.fireEvent(
+					"GoogleMapHTML::STREET_VIEW_VISIBLE",
+					{ visible : true }
+				);
+			}
+			else {
+				Ti.App.fireEvent(
+					"GoogleMapHTML::STREET_VIEW_VISIBLE",
+					{ visible : false }
+				);
+			}
+		});
+	}
+
+	function addMaker(loc){
+		var loc = markers[markerIndex],
+		    aMarker = new google.maps.Marker({
+				position : new google.maps.LatLng(loc.latitude, loc.longitude),
+				map : map,
+				title : loc.title,
+				draggable : false,
+				animation : google.maps.Animation.DROP
+			});
+
+		google.maps.event.addListener(aMarker, 'click', function() {
+			map.panTo(aMarker.getPosition());
+			info.setContent(
+				"<div id='info' onClick='loadLocation(this)' data-location='" + 
+				JSON.stringify(loc) + 
+				"'>" + 
+				loc.title + 
+				"</div>"
+			);
+			info.open(map, aMarker);
+		});
+
+		markerIndex++;
+	}
+
+	function loadLocation(obj){
+		Ti.App.fireEvent(
+			"GoogleMapHTML::LOAD_LOCATION_DETAIL",
+			{ location : JSON.parse(obj.getAttribute('data-location')) }
+		);
+	}
+
+	function loadScript() {
+		var script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = 'https://maps.googleapis.com/maps/api/js?key=' + config.apiKey + '&sensor=false&callback=initialize';
+		document.body.appendChild(script);
+	}
+
+	Ti.App.addEventListener("GoogleMap::LOCATION_MARKERS_READY", function(e) {
+		Ti.API.info("GoogleMap::LOCATION_MARKERS_READY");
+		markers = e.markers;
+	});
+
+	Ti.App.addEventListener("GoogleMap::CURRENT_LOCATION_READY", function(e) {
+		Ti.API.info("GoogleMap::CURRENT_LOCATION_READY");
+		config = e;
+		if(!scriptLoaded){
+			loadScript();
+			scriptLoaded = true;
+		}
+		else{
+			markerIndex = 0;
+			map.panTo(new google.maps.LatLng(config.lat, config.lon));
+		}
+	});
+</script>
+</head>
+<body>
+	<div id=map-canvas>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

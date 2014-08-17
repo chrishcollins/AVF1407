@@ -1,0 +1,89 @@
+{ "locations" : [
+	{
+		"name" : "Full Sail University",
+		"street" : "3300 University Boulevard",
+		"city" : "Winter Park",
+		"state" : "FL",
+		"zip" : "32792",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-800-226-7625",
+		"images" : "/images/stores/fullsail1.jpg",
+		"countryCode" : "US",
+		"latitude" : 28.5967122224,
+		"longitude" : -81.3015991161
+	},{
+		"name" : "Apple",
+		"street" : "One Infinite Loop",
+		"city" : "Cupertino",
+		"state" : "CA",
+		"zip" : "95014",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-408-966-1010",
+		"images" : "/images/stores/applehq.jpg",
+		"countryCode" : "US",
+		"latitude" : 37.33182,
+		"longitude" : 122.03118
+	},{
+		"name" : "Microsoft",
+		"street" : "15010 NE 36th Street",
+		"city" : "Redmond",
+		"state" : "WA",
+		"zip" : "98052",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-425-703-6214",
+		"images" : "/images/stores/microsoft.jpg",
+		"countryCode" : "US"
+	},{
+		"name" : "Adobe",
+		"street" : "345 Park Ave",
+		"city" : "San Jose",
+		"state" : "CA",
+		"zip" : "95110",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-408-536-6000",
+		"images" : "/images/stores/Adobe-001.jpg",
+		"countryCode" : "US"
+	},{
+		"name" : "Samsung",
+		"street" : "85 Challenger Rd",
+		"city" : "Ridgefield Park",
+		"state" : "NJ",
+		"zip" : "07660",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-201-229-4029",
+		"images" : "/images/stores/Samsung.jpg",
+		"countryCode" : "US",
+		"latitude" : 40.862987,
+		"longitude" : -73.129721
+	},{
+		"name" : "Yahoo",
+		"street" : "701 First Avenue",
+		"city" : "Sunnyvale",
+		"state" : "CA",
+		"zip" : "94089",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-408-349-3300",
+		"images" : "/images/stores/Yahoo.jpg",
+		"countryCode" : "US"
+	},{
+		"name" : "Willow Tree Apps",
+		"street" : "107 5th Street SE",
+		"city" : "Charlottesville",
+		"state" : "VA",
+		"zip" : "22902",
+		"county" : "",
+		"country" : "United States",
+		"phone" : "1-888-329-9875",
+		"images" : 
+			"/images/stores/WillowTree.jpg",
+		"countryCode" : "US",
+		"latitude" : 40.763827,
+		"longitude" : -73.972949
+	}
+]}
